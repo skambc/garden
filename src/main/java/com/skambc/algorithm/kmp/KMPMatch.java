@@ -1,8 +1,8 @@
 package com.skambc.algorithm.kmp;
 /**
- * KMP���ʾ���Ѱ��ģʽ����ǰ׺�ͺ�׺��ͬ����󳤶ȣ�������ƥ���ʱ�����ƥ��ʧ�ܣ��ַ����Ĳ��û��ˣ�
- * ֱ�ӽ�ƥ�䴮��ǰ׺�ƹ������ŵ�ԭ����׺ռ�ĵط�������ֻ�ƶ�ģʽ������Ϊ	ǰ׺�ͺ�׺���ַ�������ȵġ�
- * �����ѵ���ǲ���ģʽ��ǰ׺�ͺ�׺��ȵĳ��ȣ���next[]���顣�������next[],�ο���http://www.cnblogs.com/dolphin0520/archive/2011/08/24/2151846.html��
+ * KMP本质就是寻找模式串的前缀和后缀相同的最大长度，这样在匹配的时候，如果匹配失败，字符串的不用回退，
+ * 直接将匹配串的前缀移过来，放到原来后缀占的地方，这样只移动模式串。因为	前缀和后缀的字符串是相等的。
+ * 所有难点就是查找模式串前缀和后缀相等的长度，即next[]数组。如果计算next[],参考：http://www.cnblogs.com/dolphin0520/archive/2011/08/24/2151846.html；
  * http://www.matrix67.com/blog/archives/115
  * @author jinhd
  *
@@ -34,7 +34,7 @@ public class KMPMatch {
 				i++;
 				j++;
 			} else {
-				j = next[j]; // ������ָ��i�Ļ���
+				j = next[j]; // 消除了指针i的回溯
 			}
 			if (j == p.length()) {
 				System.out.println(c);
@@ -52,7 +52,7 @@ public class KMPMatch {
 		j = 0;
 		k = -1;
 		while (j < p.length() - 1) {
-			if (k == -1 || p.charAt(j) == p.charAt(k)) // ƥ��������,p[j]==p[k]ababa
+			if (k == -1 || p.charAt(j) == p.charAt(k)) // 匹配的情况下,p[j]==p[k]ababa
 			{
 				j++;
 				k++;

@@ -6,7 +6,7 @@ public class pingpang {
 	String a, b, c;
 
 	public static void main(String[] args) {
-		char i, j, k;/* iÊÇaµÄ¶ÔÊÖ£¬jÊÇbµÄ¶ÔÊÖ£¬kÊÇcµÄ¶ÔÊÖ */
+		char i, j, k;/* iæ˜¯açš„å¯¹æ‰‹ï¼Œjæ˜¯bçš„å¯¹æ‰‹ï¼Œkæ˜¯cçš„å¯¹æ‰‹ */
 		for (i = 'x'; i <= 'z'; i++)
 			for (j = 'x'; j <= 'z'; j++) {
 				if (i != j)
@@ -30,7 +30,7 @@ public class pingpang {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "aµÄ¶ÔÊÖÊÇ" + a + "," + "bµÄ¶ÔÊÖÊÇ" + b + "," + "cµÄ¶ÔÊÖÊÇ" + c + "\n";
+		return "açš„å¯¹æ‰‹æ˜¯" + a + "," + "bçš„å¯¹æ‰‹æ˜¯" + b + "," + "cçš„å¯¹æ‰‹æ˜¯" + c + "\n";
 	}
 
 }

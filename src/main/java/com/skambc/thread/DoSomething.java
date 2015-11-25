@@ -17,8 +17,8 @@ public class DoSomething implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		DoSomething ds1 = new DoSomething("°¢Èı");
-		DoSomething ds2 = new DoSomething("ÀîËÄ");
+		DoSomething ds1 = new DoSomething("é˜¿ä¸‰");
+		DoSomething ds2 = new DoSomething("æå››");
 
 		Thread t1 = new Thread(ds1);
 		Thread t2 = new Thread(ds1);

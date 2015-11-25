@@ -11,10 +11,10 @@ public class tanxin {
      */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        //ÏÂ±ê´Ó1¿ªÊ¼,´æ´¢»î¶¯¿ªÊ¼Ê±¼ä  
+        //ä¸‹æ ‡ä»1å¼€å§‹,å­˜å‚¨æ´»åŠ¨å¼€å§‹æ—¶é—´  
         int s[] = {0,1,3,0,5,3,5,6,8,8,2,12};  
       
-        //ÏÂ±ê´Ó1¿ªÊ¼,´æ´¢»î¶¯½áÊøÊ±¼ä  
+        //ä¸‹æ ‡ä»1å¼€å§‹,å­˜å‚¨æ´»åŠ¨ç»“æŸæ—¶é—´  
         int f[] = {0,4,5,6,7,8,9,10,11,12,13,14}; 
         Map<Integer,Integer> map=new HashMap<Integer,Integer>();
         for(int i=0;i<f.length;i++){

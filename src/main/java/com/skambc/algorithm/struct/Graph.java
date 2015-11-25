@@ -5,12 +5,12 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class Graph {
- // ´æ´¢½ÚµãĞÅÏ¢
+ // å­˜å‚¨èŠ‚ç‚¹ä¿¡æ¯
  private Object[] vertices;
- // ´æ´¢±ßµÄĞÅÏ¢
+ // å­˜å‚¨è¾¹çš„ä¿¡æ¯
  private int[][] arcs;
  private int vexnum;
- // ¼ÇÂ¼µÚi¸ö½ÚµãÊÇ·ñ±»·ÃÎÊ¹ı
+ // è®°å½•ç¬¬iä¸ªèŠ‚ç‚¹æ˜¯å¦è¢«è®¿é—®è¿‡
  private boolean[] visited;
 
  /**
@@ -29,15 +29,15 @@ public class Graph {
   g.addEdge(4, 7);
   g.addEdge(2, 5);
   g.addEdge(2, 6);
-  System.out.println("Éî¶ÈÓÅÏÈ±éÀú£º");
+  System.out.println("æ·±åº¦ä¼˜å…ˆéå†ï¼š");
   g.depthTraverse();
   System.out.println();
 
-  System.out.println("¹ã¶ÈÓÅÏÈ±éÀú£º");
+  System.out.println("å¹¿åº¦ä¼˜å…ˆéå†ï¼š");
   g.broadTraverse();
   System.out.println();
 
-  System.out.println("Éî¶ÈÓÅÏÈ±éÀú·Çµİ¹é£º");
+  System.out.println("æ·±åº¦ä¼˜å…ˆéå†éé€’å½’ï¼š");
   g.depth();
   System.out.println();
  }
@@ -81,7 +81,7 @@ public class Graph {
   return -1;
  }
 
- // Éî¶ÈÓÅÏÈ±éÀú
+ // æ·±åº¦ä¼˜å…ˆéå†
  public void depthTraverse() {
   for (int i = 0; i < vexnum; i++) {
    visited[i] = false;
@@ -92,7 +92,7 @@ public class Graph {
   }
  }
 
- // Ò»¸öÁ¬Í¨Í¼µÄÉî¶Èµİ¹é±éÀú
+ // ä¸€ä¸ªè¿é€šå›¾çš„æ·±åº¦é€’å½’éå†
  public void traverse(int i) {
   // TODO Auto-generated method stub
   visited[i] = true;
@@ -103,9 +103,9 @@ public class Graph {
   }
  }
 
- // ¹ã¶ÈÓÅÏÈ±éÀú
+ // å¹¿åº¦ä¼˜å…ˆéå†
  public void broadTraverse() {
-  // LinkedListÊµÏÖÁËQueue½Ó¿Ú
+  // LinkedListå®ç°äº†Queueæ¥å£
   Queue<Integer> q = new LinkedList<Integer>();
   for (int i = 0; i < vexnum; i++) {
    visited[i] = false;
@@ -137,7 +137,7 @@ public class Graph {
   System.out.print(vertices[i] + " ");
  }
 
- // Éî¶È·Çµİ¹é±éÀú
+ // æ·±åº¦éé€’å½’éå†
  public void depth() {
   Stack<Integer> s = new Stack<Integer>();
   for (int i = 0; i < vexnum; i++) {
@@ -146,7 +146,7 @@ public class Graph {
   for (int i = 0; i < vexnum; i++) {
    if (!visited[i]) {
     s.add(i);
-    // ÉèÖÃµÚi¸öÔªËØÒÑ¾­½øÕ»
+    // è®¾ç½®ç¬¬iä¸ªå…ƒç´ å·²ç»è¿›æ ˆ
     visited[i] = true;
     while (!s.isEmpty()) {
      int j = (Integer) s.pop();
@@ -163,7 +163,7 @@ public class Graph {
   }
  }
 
- // ×îºóÒ»¸ö
+ // æœ€åä¸€ä¸ª
  public int lastAdjVex(int i) {
   for (int j = vexnum - 1; j >= 0; j--) {
    if (arcs[i][j] > 0)
@@ -172,7 +172,7 @@ public class Graph {
   return -1;
  }
 
- // ÉÏÒ»¸ö
+ // ä¸Šä¸€ä¸ª
  public int lastAdjVex(int i, int k) {
   for (int j = k - 1; j >= 0; j--) {
    if (arcs[i][j] > 0)

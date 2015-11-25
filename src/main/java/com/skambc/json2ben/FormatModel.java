@@ -5,13 +5,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /***
- * ±éÀúÊµÌåÀàµÄÊôĞÔºÍÊı¾İÀàĞÍÒÔ¼°ÊôĞÔÖµ
+ * éå†å®ä½“ç±»çš„å±æ€§å’Œæ•°æ®ç±»å‹ä»¥åŠå±æ€§å€¼
  * @author LiBaozhen
- * @date 2013-1-4 ÉÏÎç10:25:02
+ * @date 2013-1-4 ä¸Šåˆ10:25:02
  * @company
  * @version v1.3
- * @see Ïà¹ØÀà
- * @since Ïà¹Ø/°æ±¾
+ * @see ç›¸å…³ç±»
+ * @since ç›¸å…³/ç‰ˆæœ¬
  */
 public class FormatModel {
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException,
@@ -26,14 +26,14 @@ public class FormatModel {
 
     public static void setDefaultValue(Object model) throws NoSuchMethodException, SecurityException,
             IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        // »ñÈ¡ÊµÌåÀàµÄËùÓĞÊôĞÔ£¬·µ»ØFieldÊı×é
+        // è·å–å®ä½“ç±»çš„æ‰€æœ‰å±æ€§ï¼Œè¿”å›Fieldæ•°ç»„
         Field[] field = model.getClass().getDeclaredFields();
         Method [] methods=model.getClass().getDeclaredMethods();
-        // ±éÀúËùÓĞÊôĞÔ
+        // éå†æ‰€æœ‰å±æ€§
         for (int j = 0; j < field.length; j++) {
-            // »ñÈ¡ÊôĞÔµÄÃû×Ö
+            // è·å–å±æ€§çš„åå­—
             String name = field[j].getName();
-            // »ñÈ¡ÊôĞÔµÄÀàĞÍ
+            // è·å–å±æ€§çš„ç±»å‹
             Class type = field[j].getType();
             if ("java.lang.String".equals(type.getName())) {
 //                Method setMethod = model.getClass().getMethod("set" + StringUtil.firstCharUpperCase(name), type);

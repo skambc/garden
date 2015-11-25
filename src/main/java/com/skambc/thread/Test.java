@@ -32,9 +32,9 @@ public class Test {
 			long start = System.currentTimeMillis();
 
 			while (System.currentTimeMillis() - start <= 1) {
-				System.out.println(thread.getName() + "���ڽ��ж�����");
+				System.out.println(thread.getName() + "正在进行读操作");
 			}
-			System.out.println(thread.getName() + "���������");
+			System.out.println(thread.getName() + "读操作完毕");
 		} finally {
 			rwl.readLock().unlock();
 		}

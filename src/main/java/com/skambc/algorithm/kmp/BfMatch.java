@@ -31,7 +31,7 @@ public class BfMatch {
 	        	 return i-p.length();
 	        }
 	           
-	        i=i-j+1;                //Ö¸Õëi»ØËÝ
+	        i=i-j+1;                //æŒ‡é’ˆiå›žæº¯
 	    }
 	    return -1;    
 	}

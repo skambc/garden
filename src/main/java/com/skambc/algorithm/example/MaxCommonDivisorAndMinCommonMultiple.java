@@ -2,53 +2,53 @@ package com.skambc.algorithm.example;
 
 import java.util.Scanner;
 
-/*Çó×î´ó¹«Ô¼ÊıºÍ×îĞ¡¹«±¶Êı*/  
+/*æ±‚æœ€å¤§å…¬çº¦æ•°å’Œæœ€å°å…¬å€æ•°*/  
 public class MaxCommonDivisorAndMinCommonMultiple {  
   
     public static void main(String[] args) {  
-        Scanner scan = new Scanner(System.in);// ½ÓÊÕ¿ØÖÆÌ¨ÊäÈëµÄĞÅÏ¢  
+        Scanner scan = new Scanner(System.in);// æ¥æ”¶æ§åˆ¶å°è¾“å…¥çš„ä¿¡æ¯  
   
-        System.out.print("ÇëÊäÈëµÚÒ»¸öÕûÊı£º");
-        int num1 = scan.nextInt(); // È¡³ö¿ØÖÆÌ¨ÊäÈëµÄĞÅÏ¢  
+        System.out.print("è¯·è¾“å…¥ç¬¬ä¸€ä¸ªæ•´æ•°ï¼š");
+        int num1 = scan.nextInt(); // å–å‡ºæ§åˆ¶å°è¾“å…¥çš„ä¿¡æ¯  
   
-        System.out.print("ÇëÊäÈëµÚ¶ş¸öÕûÊı£º");  
-        int num2 = scan.nextInt(); // È¡³ö¿ØÖÆÌ¨ÊäÈëµÄĞÅÏ¢  
+        System.out.print("è¯·è¾“å…¥ç¬¬äºŒä¸ªæ•´æ•°ï¼š");  
+        int num2 = scan.nextInt(); // å–å‡ºæ§åˆ¶å°è¾“å…¥çš„ä¿¡æ¯  
   
-        System.out.println(maxCommonDivisor(num1, num2));// µ÷ÓÃmaxCommonDivisor()·½·¨  
-        System.out.println(minCommonMultiple(num1, num2));// µ÷ÓÃminCommonMultiple()·½·¨  
+        System.out.println(maxCommonDivisor(num1, num2));// è°ƒç”¨maxCommonDivisor()æ–¹æ³•  
+        System.out.println(minCommonMultiple(num1, num2));// è°ƒç”¨minCommonMultiple()æ–¹æ³•  
     }  
   
-    // µİ¹é·¨Çó×î´ó¹«Ô¼Êı  
+    // é€’å½’æ³•æ±‚æœ€å¤§å…¬çº¦æ•°  
     public static int maxCommonDivisor(int m, int n) {  
-        if (m < n) {// ±£Ö¤m>n,Èôm<n,Ôò½øĞĞÊı¾İ½»»»  
+        if (m < n) {// ä¿è¯m>n,è‹¥m<n,åˆ™è¿›è¡Œæ•°æ®äº¤æ¢  
             int temp = m;  
             m = n;  
             n = temp;  
         }  
-        if (m % n == 0) {// ÈôÓàÊıÎª0,·µ»Ø×î´ó¹«Ô¼Êı  
+        if (m % n == 0) {// è‹¥ä½™æ•°ä¸º0,è¿”å›æœ€å¤§å…¬çº¦æ•°  
             return n;  
-        } else { // ·ñÔò,½øĞĞµİ¹é,°Ñn¸³¸øm,°ÑÓàÊı¸³¸øn  
+        } else { // å¦åˆ™,è¿›è¡Œé€’å½’,æŠŠnèµ‹ç»™m,æŠŠä½™æ•°èµ‹ç»™n  
             return maxCommonDivisor(n, m % n);  
         }  
     }  
   
-    // Ñ­»··¨Çó×î´ó¹«Ô¼Êı  
+    // å¾ªç¯æ³•æ±‚æœ€å¤§å…¬çº¦æ•°  
     public static int maxCommonDivisor2(int m, int n) {  
   
-        if (m < n) {// ±£Ö¤m>n,Èôm<n,Ôò½øĞĞÊı¾İ½»»»  
+        if (m < n) {// ä¿è¯m>n,è‹¥m<n,åˆ™è¿›è¡Œæ•°æ®äº¤æ¢  
             int temp = m;  
             m = n;  
             n = temp;  
         }  
-        while (m % n != 0) {// ÔÚÓàÊı²»ÄÜÎª0Ê±,½øĞĞÑ­»·  
+        while (m % n != 0) {// åœ¨ä½™æ•°ä¸èƒ½ä¸º0æ—¶,è¿›è¡Œå¾ªç¯  
             int temp = m % n;  
             m = n;  
             n = temp;  
         }  
-        return n;// ·µ»Ø×î´ó¹«Ô¼Êı  
+        return n;// è¿”å›æœ€å¤§å…¬çº¦æ•°  
     }  
   
-    // Çó×îĞ¡¹«±¶Êı  
+    // æ±‚æœ€å°å…¬å€æ•°  
     public static int minCommonMultiple(int m, int n) {  
         return m * n / maxCommonDivisor(m, n);  
     }  

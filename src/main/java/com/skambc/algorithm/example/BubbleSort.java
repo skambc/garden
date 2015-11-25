@@ -3,21 +3,21 @@ package com.skambc.algorithm.example;
 public class BubbleSort {
     public static void main(String[] args) {
         int score[] = { 67, 69, 75, 87, 89, 90, 99, 100 };
-        for (int i = 0; i < score.length - 1; i++) { //×î¶à×ön-1ÌËÅÅÐò
-            for (int j = 0; j < score.length - i - 1; j++) { //¶Ôµ±Ç°ÎÞÐòÇø¼äscore[0......length-i-1]½øÐÐÅÅÐò(jµÄ·¶Î§ºÜ¹Ø¼ü£¬Õâ¸ö·¶Î§ÊÇÔÚÖð²½ËõÐ¡µÄ)
-                if (score[j] < score[j + 1]) { //°ÑÐ¡µÄÖµ½»»»µ½ºóÃæ
+        for (int i = 0; i < score.length - 1; i++) { //æœ€å¤šåšn-1è¶ŸæŽ’åº
+            for (int j = 0; j < score.length - i - 1; j++) { //å¯¹å½“å‰æ— åºåŒºé—´score[0......length-i-1]è¿›è¡ŒæŽ’åº(jçš„èŒƒå›´å¾ˆå…³é”®ï¼Œè¿™ä¸ªèŒƒå›´æ˜¯åœ¨é€æ­¥ç¼©å°çš„)
+                if (score[j] < score[j + 1]) { //æŠŠå°çš„å€¼äº¤æ¢åˆ°åŽé¢
                     int temp = score[j];
                     score[j] = score[j + 1];
                     score[j + 1] = temp;
                 }
             }
-            System.out.print("µÚ" + (i + 1) + "´ÎÅÅÐò½á¹û£º");
+            System.out.print("ç¬¬" + (i + 1) + "æ¬¡æŽ’åºç»“æžœï¼š");
             for (int a = 0; a < score.length; a++) {
                 System.out.print(score[a] + "\t");
             }
             System.out.println("");
         }
-        System.out.print("×îÖÕÅÅÐò½á¹û£º");
+        System.out.print("æœ€ç»ˆæŽ’åºç»“æžœï¼š");
         for (int a = 0; a < score.length; a++) {
             System.out.print(score[a] + "\t");
         }

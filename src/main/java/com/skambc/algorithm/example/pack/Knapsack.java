@@ -2,13 +2,13 @@ package com.skambc.algorithm.example.pack;
 
 public class Knapsack {    
     
-    /** ±³°üÖØÁ¿  */    
+    /** èƒŒåŒ…é‡é‡  */    
     private int weight;    
         
-    /** ±³°üÎïÆ·¼ÛÖµ  */    
+    /** èƒŒåŒ…ç‰©å“ä»·å€¼  */    
     private int value;    
     /***  
-     * ¹¹ÔìÆ÷  
+     * æ„é€ å™¨  
      */    
     public Knapsack(int weight, int value) {    
         this.value = value;    

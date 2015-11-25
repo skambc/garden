@@ -46,7 +46,7 @@ public class AlGraph {
         }
     }
     private void BFS(HeadNode node) {
-        // LinkedList实现了Queue接口
+        // LinkedList瀹炵幇浜哘ueue鎺ュ彛
         Queue<HeadNode> q = new LinkedList<HeadNode>();
         for (int i = 0; i < headNodes.size(); i++) {
             if (headNodes.get(i).isVisited == false) {

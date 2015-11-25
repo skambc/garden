@@ -15,11 +15,11 @@ public class KnapsackTest {
         KnapsackProblem kp = new KnapsackProblem(bags, totalWeight);    
             
         kp.solve();    
-        System.out.println(" -------- ¸Ã±³°üÎÊÌâÊµÀıµÄ½â: --------- ");    
-        System.out.println("×îÓÅÖµ£º" + kp.getBestValue());     
-        System.out.println("×îÓÅ½â¡¾Ñ¡È¡µÄ±³°ü¡¿: ");    
+        System.out.println(" -------- è¯¥èƒŒåŒ…é—®é¢˜å®ä¾‹çš„è§£: --------- ");    
+        System.out.println("æœ€ä¼˜å€¼ï¼š" + kp.getBestValue());     
+        System.out.println("æœ€ä¼˜è§£ã€é€‰å–çš„èƒŒåŒ…ã€‘: ");    
         System.out.println(kp.getBestSolution());    
-        System.out.println("×îÓÅ¾ö²ß¾ØÕó±í£º");    
+        System.out.println("æœ€ä¼˜å†³ç­–çŸ©é˜µè¡¨ï¼š");    
         int[][] bestValues = kp.getBestValues();    
         for (int i=0; i < bestValues.length; i++) {    
             for (int j=0; j < bestValues[i].length; j++) {    

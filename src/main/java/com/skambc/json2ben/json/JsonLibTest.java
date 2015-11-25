@@ -1,6 +1,6 @@
 package com.skambc.json2ben.json;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 import net.sf.ezmorph.Morpher;
 import net.sf.ezmorph.MorpherRegistry;
 import net.sf.ezmorph.bean.BeanMorpher;
@@ -22,17 +23,17 @@ import org.junit.Test;
 public class JsonLibTest {
 
 	/*
-	 * ÆÕÍ¨ÀàĞÍ¡¢List¡¢CollectionµÈ¶¼ÊÇÓÃJSONArray½âÎö
+	 * æ™®é€šç±»å‹ã€Listã€Collectionç­‰éƒ½æ˜¯ç”¨JSONArrayè§£æ
 	 * 
-	 * Map¡¢×Ô¶¨ÒåÀàĞÍÊÇÓÃJSONObject½âÎö ¿ÉÒÔ½«MapÀí½â³ÉÒ»¸ö¶ÔÏó£¬ÀïÃæµÄkey/value¶Ô¿ÉÒÔÀí½â³É¶ÔÏóµÄÊôĞÔ/ÊôĞÔÖµ
-	 * ¼´{key1:value1,key2,value2......}
+	 * Mapã€è‡ªå®šä¹‰ç±»å‹æ˜¯ç”¨JSONObjectè§£æ å¯ä»¥å°†Mapç†è§£æˆä¸€ä¸ªå¯¹è±¡ï¼Œé‡Œé¢çš„key/valueå¯¹å¯ä»¥ç†è§£æˆå¯¹è±¡çš„å±æ€§/å±æ€§å€¼
+	 * å³{key1:value1,key2,value2......}
 	 * 
-	 * 1.JSONObjectÊÇÒ»¸öname:values¼¯ºÏ£¬Í¨¹ıËüµÄget(key)·½·¨È¡µÃµÄÊÇkeyºó¶ÔÓ¦µÄvalue²¿·Ö(×Ö·û´®)
-	 * Í¨¹ıËüµÄgetJSONObject(key)¿ÉÒÔÈ¡µ½Ò»¸öJSONObject£¬--> ×ª»»³Émap, Í¨¹ıËüµÄgetJSONArray(key)
-	 * ¿ÉÒÔÈ¡µ½Ò»¸öJSONArray £¬
+	 * 1.JSONObjectæ˜¯ä¸€ä¸ªname:valuesé›†åˆï¼Œé€šè¿‡å®ƒçš„get(key)æ–¹æ³•å–å¾—çš„æ˜¯keyåå¯¹åº”çš„valueéƒ¨åˆ†(å­—ç¬¦ä¸²)
+	 * é€šè¿‡å®ƒçš„getJSONObject(key)å¯ä»¥å–åˆ°ä¸€ä¸ªJSONObjectï¼Œ--> è½¬æ¢æˆmap, é€šè¿‡å®ƒçš„getJSONArray(key)
+	 * å¯ä»¥å–åˆ°ä¸€ä¸ªJSONArray ï¼Œ
 	 */
 
-	// Ò»°ãÊı×é×ª»»³ÉJSON
+	// ä¸€èˆ¬æ•°ç»„è½¬æ¢æˆJSON
 	@Test
 	public void testArrayToJSON() {
 		boolean[] boolArray = new boolean[] { true, false, true };
@@ -41,7 +42,7 @@ public class JsonLibTest {
 		// prints [true,false,true]
 	}
 
-	// Collection¶ÔÏó×ª»»³ÉJSON
+	// Collectionå¯¹è±¡è½¬æ¢æˆJSON
 	@Test
 	public void testListToJSON() {
 		List list = new ArrayList();
@@ -52,7 +53,7 @@ public class JsonLibTest {
 		// prints ["first","second"]
 	}
 
-	// ×Ö·û´®json×ª»»³Éjson£¬ ¸ù¾İÇé¿öÊÇÓÃJSONArray»òJSONObject
+	// å­—ç¬¦ä¸²jsonè½¬æ¢æˆjsonï¼Œ æ ¹æ®æƒ…å†µæ˜¯ç”¨JSONArrayæˆ–JSONObject
 	@Test
 	public void testJsonStrToJSON() {
 		JSONArray jsonArray = JSONArray.fromObject("['json','is','easy']");
@@ -60,7 +61,7 @@ public class JsonLibTest {
 		// prints ["json","is","easy"]
 	}
 
-	// Map×ª»»³Éjson£¬ ÊÇÓÃjsonObject
+	// Mapè½¬æ¢æˆjsonï¼Œ æ˜¯ç”¨jsonObject
 	@Test
 	public void testMapToJSON() {
 		Map map = new HashMap();
@@ -74,18 +75,18 @@ public class JsonLibTest {
 		System.out.println(jsonObject);
 	}
 
-	// ¸´ºÏÀàĞÍbean×ª³É³Éjson
+	// å¤åˆç±»å‹beanè½¬æˆæˆjson
 	@Test
 	public void testBeadToJSON() {
 		MyBean bean = new MyBean();
 		bean.setId("001");
-		bean.setName("ÒøĞĞ¿¨");
+		bean.setName("é“¶è¡Œå¡");
 		bean.setDate(new Date());
 
 		List cardNum = new ArrayList();
-		cardNum.add("Å©ĞĞ");
-		cardNum.add("¹¤ĞĞ");
-		cardNum.add("½¨ĞĞ");
+		cardNum.add("å†œè¡Œ");
+		cardNum.add("å·¥è¡Œ");
+		cardNum.add("å»ºè¡Œ");
 		cardNum.add(new Person("test"));
 
 		bean.setCardNum(cardNum);
@@ -95,7 +96,7 @@ public class JsonLibTest {
 
 	}
 
-	// ÆÕÍ¨ÀàĞÍµÄjson×ª»»³É¶ÔÏó
+	// æ™®é€šç±»å‹çš„jsonè½¬æ¢æˆå¯¹è±¡
 	@Test
 	public void testJSONToObject() throws Exception {
 		String json = "{name=\"json\",bool:true,int:1,double:2.2,func:function(a){ return a; },array:[1,2]}";
@@ -127,7 +128,7 @@ public class JsonLibTest {
 
 	}
 
-	// ½«json½âÎö³É¸´ºÏÀàĞÍ¶ÔÏó, °üº¬List
+	// å°†jsonè§£ææˆå¤åˆç±»å‹å¯¹è±¡, åŒ…å«List
 	@Test
 	public void testJSONToBeanHavaList() {
 		String json = "{list:[{name:'test1'},{name:'test2'}],map:{test1:{name:'test1'},test2:{name:'test2'}}}";
@@ -152,15 +153,15 @@ public class JsonLibTest {
 		}
 	}
 
-	// ½«json½âÎö³É¸´ºÏÀàĞÍ¶ÔÏó, °üº¬Map
+	// å°†jsonè§£ææˆå¤åˆç±»å‹å¯¹è±¡, åŒ…å«Map
 	@Test
 	public void testJSONToBeanHavaMap() {
-		// °ÑMap¿´³ÉÒ»¸ö¶ÔÏó
+		// æŠŠMapçœ‹æˆä¸€ä¸ªå¯¹è±¡
 		String json = "{list:[{name:'test1'},{name:'test2'}],map:{test1:{name:'test1'},test2:{name:'test2'}}}";
 		Map classMap = new HashMap();
 		classMap.put("list", Person.class);
 		classMap.put("map", Map.class);
-		// Ê¹ÓÃ°µÊ¾£¬Ö±½Ó½«json½âÎöÎªÖ¸¶¨×Ô¶¨Òå¶ÔÏó£¬ÆäÖĞListÍêÈ«½âÎö,MapÃ»ÓĞÍêÈ«½âÎö
+		// ä½¿ç”¨æš—ç¤ºï¼Œç›´æ¥å°†jsonè§£æä¸ºæŒ‡å®šè‡ªå®šä¹‰å¯¹è±¡ï¼Œå…¶ä¸­Listå®Œå…¨è§£æ,Mapæ²¡æœ‰å®Œå…¨è§£æ
 		MyBeanWithPerson diyBean = (MyBeanWithPerson) JSONObject.toBean(
 				JSONObject.fromObject(json), MyBeanWithPerson.class, classMap);
 		System.out.println(diyBean);
@@ -174,17 +175,17 @@ public class JsonLibTest {
 
 		System.out.println("do the map release");
 
-		// ÏÈÍù×¢²áÆ÷ÖĞ×¢²á±ä»»Æ÷£¬ĞèÒªÓÃµ½ezmorph°üÖĞµÄÀà
+		// å…ˆå¾€æ³¨å†Œå™¨ä¸­æ³¨å†Œå˜æ¢å™¨ï¼Œéœ€è¦ç”¨åˆ°ezmorphåŒ…ä¸­çš„ç±»
 		MorpherRegistry morpherRegistry = JSONUtils.getMorpherRegistry();
 		Morpher dynaMorpher = new BeanMorpher(Person.class, morpherRegistry);
 		morpherRegistry.registerMorpher(dynaMorpher);
 
 		Map map = diyBean.getMap();
-		/* ÕâÀïµÄmapÃ»½øĞĞÀàĞÍ°µÊ¾£¬¹Ê°´Ä¬ÈÏµÄ£¬ÀïÃæ´æµÄÎªnet.sf.ezmorph.bean.MorphDynaBeanÀàĞÍµÄ¶ÔÏó */
+		/* è¿™é‡Œçš„mapæ²¡è¿›è¡Œç±»å‹æš—ç¤ºï¼Œæ•…æŒ‰é»˜è®¤çš„ï¼Œé‡Œé¢å­˜çš„ä¸ºnet.sf.ezmorph.bean.MorphDynaBeanç±»å‹çš„å¯¹è±¡ */
 		System.out.println(map);
 		List<Person> output = new ArrayList();
 		for (Iterator i = map.values().iterator(); i.hasNext();) {
-			// Ê¹ÓÃ×¢²áÆ÷¶ÔÖ¸¶¨DynaBean½øĞĞ¶ÔÏó±ä»»
+			// ä½¿ç”¨æ³¨å†Œå™¨å¯¹æŒ‡å®šDynaBeanè¿›è¡Œå¯¹è±¡å˜æ¢
 			output.add((Person) morpherRegistry.morph(Person.class, i.next()));
 		}
 
