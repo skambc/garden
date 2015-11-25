@@ -1,7 +1,11 @@
 package com.skambc.thread;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-
+/**
+ * 
+ * @author skambc
+ *
+ */
 public class Test {
 	private ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
 
@@ -28,9 +32,9 @@ public class Test {
 			long start = System.currentTimeMillis();
 
 			while (System.currentTimeMillis() - start <= 1) {
-				System.out.println(thread.getName() + "ÕýÔÚ½øÐÐ¶Á²Ù×÷");
+				System.out.println(thread.getName() + "ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½");
 			}
-			System.out.println(thread.getName() + "¶Á²Ù×÷Íê±Ï");
+			System.out.println(thread.getName() + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		} finally {
 			rwl.readLock().unlock();
 		}
